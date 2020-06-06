@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sqflite_tuts/generated/l10n.dart';
 import 'package:sqflite_tuts/models/todo.dart';
 
 import '../database_helper.dart';
@@ -81,10 +82,12 @@ class _TodoFormState extends State<TodoForm> {
                         ),
                         SizedBox(width: 20),
                         Text(
-                          widget.todo == null ? 'Create Todo' : 'Edit Todo',
+                          widget.todo == null
+                              ? '${S.of(context).addTodoLabel}'
+                              : '${S.of(context).editTodoLabel}',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 24,
+                            fontSize: 20,
                           ),
                         ),
                         Spacer(),
@@ -103,17 +106,20 @@ class _TodoFormState extends State<TodoForm> {
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(10)),
-                                      title: Text('Are you sure?'),
-                                      content: Text(
-                                          'The data will be remved from the app'),
+                                      title: Text(
+                                          '${S.of(context).areyouSureMsg}'),
+                                      content:
+                                          Text('${S.of(context).removeAllMsg}'),
                                       actions: <Widget>[
                                         FlatButton(
-                                          child: Text('No'),
+                                          child:
+                                              Text('${S.of(context).noLabel}'),
                                           onPressed: () =>
                                               Navigator.pop(context),
                                         ),
                                         FlatButton(
-                                            child: Text('Ok'),
+                                            child: Text(
+                                                '${S.of(context).yesLabel}'),
                                             onPressed: () async {
                                               await widget.databaseHelper
                                                   .deleteTodo(widget.todo.id);
@@ -133,24 +139,25 @@ class _TodoFormState extends State<TodoForm> {
                   TextFormField(
                     initialValue: widget.todo?.title,
                     onSaved: (val) => _title = val,
-                    validator: (val) =>
-                        val.isEmpty ? 'Todo title is required' : null,
+                    validator: (val) => val.isEmpty
+                        ? '${S.of(context).titleRequiredMsg}'
+                        : null,
                     decoration: InputDecoration(
-                      labelText: 'Todo Title',
+                      labelText: '${S.of(context).todoTitleLabel}',
                     ),
                   ),
                   TextFormField(
                     initialValue: widget.todo?.desc,
                     onSaved: (val) => _desc = val,
                     validator: (val) =>
-                        val.isEmpty ? 'Todo description is required' : null,
+                        val.isEmpty ? '${S.of(context).descRequiredMsg}' : null,
                     maxLines: 4,
                     decoration: InputDecoration(
-                      labelText: 'Todo Description',
+                      labelText: '${S.of(context).todoDescLabel}',
                     ),
                   ),
                   SwitchListTile(
-                    title: Text('Status'),
+                    title: Text('${S.of(context).statusLabel}'),
                     value: _status,
                     onChanged: _changeStatus,
                   ),
@@ -165,7 +172,7 @@ class _TodoFormState extends State<TodoForm> {
                       color: Theme.of(context).primaryColor,
                       textColor: Colors.white,
                       onPressed: _validateAndSave,
-                      child: Text('Save'),
+                      child: Text('${S.of(context).savelabel}'),
                     ),
                   ),
                 ],

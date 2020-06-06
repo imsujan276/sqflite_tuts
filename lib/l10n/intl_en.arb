@@ -1,0 +1,17 @@
+{
+    "todo": "Todos",
+    "emptyTodoMsg": "No todo is added.",
+    "clearAllLabel": "Clear all",
+    "areyouSureMsg": "Are you sure?",
+    "removeAllMsg": "All the todos will be deleted permanently",
+    "yesLabel": "Yes",
+    "noLabel": "No",
+    "addTodoLabel": "Create Todo",
+    "todoTitleLabel": "Todo Title",
+    "todoDescLabel": "Todo Description",
+    "statusLabel": "Status",
+    "savelabel": "Save",
+    "editTodoLabel": "Edit Todo",
+    "titleRequiredMsg": "Title is required",
+    "descRequiredMsg": "Description is required"
+}

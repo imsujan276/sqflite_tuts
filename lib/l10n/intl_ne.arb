@@ -1,0 +1,17 @@
+{
+    "todo": "कामहरु",
+    "emptyTodoMsg": "कुनै कार्य गर्न सेभ छैन।",
+    "clearAllLabel": "सबै मेटाउनुहोस्",
+    "areyouSureMsg": "के तपाईँ निश्चित हुनुहुन्छ?",
+    "removeAllMsg": "सबै कार्यहरू स्थायी रूपमा मेटिने छन्",
+    "yesLabel": "हो",
+    "noLabel": "होईन",
+    "addTodoLabel": "काम थप्नुहोस्",
+    "todoTitleLabel": "कामको शीर्षक",
+    "todoDescLabel": "कामको विवरण",
+    "statusLabel": "स्थिति",
+    "savelabel": "थप्नुहोस्",
+    "editTodoLabel": "काम विवरण सम्पादन गर्नुहोस्",
+    "titleRequiredMsg": "शीर्षक आवश्यक छ",
+    "descRequiredMsg": "विवरण आवश्यक छ"
+}
